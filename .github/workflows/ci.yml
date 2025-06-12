@@ -1,0 +1,25 @@
+
+name: Run Python CI
+
+on: [push]
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Run build script
+        run: python log_build.py
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: logs
+          path: build.log
