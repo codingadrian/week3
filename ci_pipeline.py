@@ -21,3 +21,5 @@ with open(log_file, "w") as log:
         log.write("All required files found\n")
 
 print("CI Pipeline completed successfully")
+
+# attempt 3
