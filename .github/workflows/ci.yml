@@ -16,7 +16,7 @@ jobs:
           python-version: '3.11'
       
       - name: Run Python CI pipeline
-        run: python3 ci_pipeline.py
+        run: python ci_pipeline.py
       
       - name: Upload Build Log
         uses: actions/upload-artifact@v4
