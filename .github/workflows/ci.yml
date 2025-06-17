@@ -4,7 +4,7 @@ name: Run Python CI
 on: [push]
 
 jobs:
-  run-script:
+  run-ci:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,11 +15,11 @@ jobs:
         with:
           python-version: '3.11'
       
-      - name: Run build script
-        run: python log_build.py
+      - name: Run Python CI pipeline
+        run: python3 ci_pipeline.py
       
-      - name: Upload artifact
+      - name: Upload Build Log
         uses: actions/upload-artifact@v4
         with:
-          name: logs
+          name: ci-log
           path: build.log
